@@ -19,9 +19,7 @@ function getDay() {
 const Day = () => {
   return (
     <div className="flex py-4 px-2">
-      <h4
-        className={`${styles.heroSubText} text-center drop-shadow-glow dark:text-slate-100`}
-      >
+      <h4 className={`${styles.heroSubText} text-center`}>
         Today is {getDay()}
       </h4>
     </div>

@@ -13,20 +13,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
+        secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+        text: "rgb(var(--color-text) / <alpha-value>)",
+        success: "rgb(var(--color-success) / <alpha-value>)",
+        info: "rgb(var(--color-info) / <alpha-value>)",
+        warn: "rgb(var(--color-warn) / <alpha-value>)",
+        error: "rgb(var(--color-error) / <alpha-value>)",
+        transparent: "transparent",
+        current: "currentColor",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
       },
       dropShadow: {
         glow: [
-          "0 0px 20px rgba(136, 204, 255, 0.8)",
-          "0 0px 65px rgba(136, 204, 255, 0.58)",
+          "0 0px 20px rgba(54, 81, 94, 0.8)",
+          "0 0px 65px rgba(54, 81, 94, 0.58)",
         ],
       },
       screens: {

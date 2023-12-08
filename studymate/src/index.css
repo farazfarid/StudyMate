@@ -4,6 +4,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: 137 207 240;
+    --color-secondary: 33 158 243;
+    --color-text: 255 255 255;
+    --color-success: 85 216 107;
+    --color-info: 33 33 33;
+    --color-warn: 255 183 77;
+    --color-error: 244 67 54;
+  }
+
+  :root[class~="dark"] {
+    --color-primary: 0 123 255;
+    --color-secondary: 63 81 181;
+    --color-text: 241 241 241;
+    --color-success: 34 139 34;
+    --color-info: 55 71 79;
+    --color-warn: 255 239 126;
+    --color-error: 244 67 54;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +33,7 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 
-  @apply transition-colors duration-700 ease-in-out;
+  @apply text-text transition-colors duration-700 ease-in-out;
 }
 
 .black-gradient {
@@ -107,4 +129,14 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+input::placeholder {
+  color: var(--color-text);
+  opacity: 1; /* Firefox */
+}
+
+input::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  color: var(--color-text);
 }
