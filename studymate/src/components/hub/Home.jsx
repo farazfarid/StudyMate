@@ -1,6 +1,6 @@
 import Clock from "./Clock";
 import Day from "./Day";
-import Weather from "../weather/Weather";
+import Weather from "./Weather";
 import { styles } from "../../styles";
 import Widgets from "./Widgets";
 import Modal from "./Modal";

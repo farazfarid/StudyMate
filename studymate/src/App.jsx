@@ -1,5 +1,6 @@
 import Home from "./components/hub/Home";
 import Draw from "./components/notes/Draw";
+import ToDo from "./components/notes/ToDo";
 
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -25,10 +26,10 @@ export default function App() {
       className={`w-screen h-screen flex items-center justify-center flex-col bg-white-100 bg-opacity-80 dark:bg-neutral-900 bg-hero-light dark:bg-hero-dark bg-cover bg-center transition ease-in-out duration-300`}
     >
       <Router>
-        <div className="absolute left-12 top-8 z-50">
+        <div className="absolute left-6 top-8 z-50">
           <Navbar />
         </div>
-        <div className="absolute right-12 top-8 z-50">
+        <div className="absolute right-6 top-8 z-50">
           <button
             onClick={() => {
               setDarkMode(!darkMode);
@@ -44,8 +45,8 @@ export default function App() {
         <div className="flex-1 py-4 px-2 my-4 mx-2 w-full md:w-5/6 backdrop-blur-md border border-none rounded-3xl justify-center items-center">
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/quickNote" element={<Draw />} />
-
+            <Route exact path="/whiteboard" element={<Draw />} />
+            <Route exact path="/ToDo" element={<ToDo />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           </Routes>
         </div>
