@@ -1,9 +1,5 @@
-import React from 'react'
-
 function RocketChat() {
-  return (
-    <div className='backdrop-blur-md bg-white/30'>rocketchat</div>
-  )
+  return <div className="backdrop-blur-md bg-white/30"></div>;
 }
 
-export default RocketChat
+export default RocketChat;
