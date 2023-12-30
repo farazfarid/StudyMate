@@ -22,7 +22,7 @@ function Hub() {
         >
           <p class="flex text-xl font-semibold">
             <FileText className="mx-2" />
-            AI ContentWriter
+            AI Content Writer
           </p>
         </a>
 
