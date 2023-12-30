@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
+  BrainCircuit,
   CalendarRange,
   GraduationCap,
   Home,
@@ -25,18 +26,17 @@ const Navbar = () => {
     {
       title: "ToDo-List",
       icon: <ListTodo className="h-8 w-8" />,
-      to: "/ToDo",
+      to: "/todo",
     },
     {
-      title: "Ilias",
-      icon: <GraduationCap className="h-8 w-8" />,
-      to: "/ilias",
+      title: "TimeTable",
+      icon: <CalendarRange className="h-8 w-8" />,
+      to: "/timetable",
     },
-    { title: "LSF", icon: <CalendarRange className="h-8 w-8" />, to: "/lsf" },
     {
-      title: "RocketChat",
-      icon: <MessagesSquare className="h-8 w-8" />,
-      to: "/rocketchat",
+      title: "AI Hub",
+      icon: <BrainCircuit className="h-8 w-8" />,
+      to: "/ai-hub",
     },
     {
       /* DB Zugverbindungen - Aktuelle Zeit zur Uni

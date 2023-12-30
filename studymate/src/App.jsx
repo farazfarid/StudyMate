@@ -9,7 +9,8 @@ import CookieConsent from "react-cookie-consent";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Navbar from "./components/Navbar";
 import { Moon, Sun } from "lucide-react";
-import RocketChat from "./components/uni/RocketChat";
+import Hub from "./components/ai/Hub";
+import Timetable from "./components/uni/Timetable";
 
 export default function App() {
   let [darkMode, setDarkMode] = useState(false);
@@ -47,8 +48,9 @@ export default function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/whiteboard" element={<Draw />} />
-            <Route exact path="/ToDo" element={<ToDo />} />
-            <Route path="/rocketchat" element={<RocketChat />} />
+            <Route exact path="/todo" element={<ToDo />} />
+            <Route exact path="/timetable" element={<Timetable />} />
+            <Route path="/ai-hub" element={<Hub />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           </Routes>
         </div>

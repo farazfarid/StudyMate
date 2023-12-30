@@ -65,6 +65,7 @@ const AddTodoInput = ({ value, onChange, onAdd }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const todoOptions = [
+    "What to do today?",
     "Preparing for Final Exams: Reviewing Class Notes",
     "Researching and Writing Term Paper on Cognitive Psychology: Exploring Memory",
     "Attending Study Group for Machine Learning",
