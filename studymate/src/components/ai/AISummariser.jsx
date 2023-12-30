@@ -45,11 +45,12 @@ function AISummariser() {
               style={{ resize: "none" }}
             />
             <button
-              className="absolute top-[1.8rem] right-7 text-text disabled:cursor-not-allowed hover:scale-105 transition-transform"
+              className="flex text-text disabled:cursor-not-allowed hover:scale-105 transition-transform p-4 border justify-center items-center rounded-md w-full bg-primary"
               onClick={handleSendMessage}
-              disabled={!prompt}
+              disabled={!prompt || !style}
             >
-              <ArrowUpSquare className="w-6 h-6 text-text" />
+              <ArrowUpSquare className="w-6 h-6 text-text" />{" "}
+              <p className="ml-2">Summarise</p>
             </button>
           </div>
         </div>

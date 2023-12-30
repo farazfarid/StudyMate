@@ -168,6 +168,16 @@ input::-ms-input-placeholder {
   color: var(--color-text);
 }
 
+textarea::placeholder {
+  color: var(--color-text);
+  opacity: 1; /* Firefox */
+}
+
+textarea::-ms-input-placeholder {
+  /* Edge 12 -18 */
+  color: var(--color-text);
+}
+
 @layer components {
   .primaryCard {
     @apply backdrop-blur border border-white border-opacity-10 rounded-2xl bg-white/30 shadow-[0_0_20px_rgba(255,_255,_255,_0.7)] text-text p-4;
