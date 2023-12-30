@@ -2,20 +2,28 @@ import { ArrowUpSquare } from "lucide-react";
 import React, { useState } from "react";
 import Avatar from "react-avatar";
 
-import { sendMessage } from "../../util/openai";
+import { translateMessage } from "../../util/aitranslate";
 
 function AITranslator() {
   const [prompt, setPrompt] = useState("");
+  const [sourceLanguage, setSourceLanguage] = useState("");
+  const [targetLanguage, setTargetLanguage] = useState("");
   const [messages, setMessages] = useState([]);
 
   const handleSendMessage = async () => {
-    const response = await sendMessage(prompt);
+    const response = await translateMessage(
+      prompt,
+      sourceLanguage,
+      targetLanguage
+    );
     setMessages([
       ...messages,
-      { text: prompt, isUser: true },
-      { text: response, isUser: false },
+      { text: prompt, sourceLanguage, isUser: true },
+      { text: response, targetLanguage, isUser: false },
     ]);
     setPrompt("");
+    setSourceLanguage("");
+    setTargetLanguage("");
   };
 
   return (
@@ -44,6 +52,11 @@ function AITranslator() {
                   } text-white m-2 p-3 rounded-l-lg rounded-br-lg`}
                 >
                   <p className="text-sm">{messages.text}</p>
+                  {messages.isUser ? (
+                    <span className="text-xs">{messages.sourceLanguage}</span>
+                  ) : (
+                    <span className="text-xs">{messages.targetLanguage}</span>
+                  )}
                 </div>
               </div>
               <div className="flex-shrink-0 h-10 w-10 rounded-full">
@@ -57,9 +70,9 @@ function AITranslator() {
           ))}
         </div>
 
-        <div className="relative p-4">
+        <div className="p-4">
           <input
-            className="w-full bg-transparent text-text border-gray-300 border-2 rounded-md p-3 pr-12 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-950 dark:focus:border-transparent"
+            className="w-full bg-transparent text-text border-gray-300 border-2 rounded-md p-2 pr-12 mt-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-950 dark:focus:border-transparent"
             type="text"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
@@ -68,14 +81,41 @@ function AITranslator() {
                 handleSendMessage();
               }
             }}
-            placeholder="Type your message…"
+            placeholder="Type your text..."
           />
+          <div className="flex justify-center items-center">
+            <input
+              className="w-1/3 bg-transparent text-text border-gray-300 border-2 rounded-md p-2 mx-1 my-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-950 dark:focus:border-transparent"
+              type="text"
+              value={sourceLanguage}
+              onChange={(e) => setSourceLanguage(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSendMessage();
+                }
+              }}
+              placeholder="Source Language…"
+            />
+            <input
+              className="w-1/3 bg-transparent text-text border-gray-300 border-2 rounded-md p-2 mx-1 my-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-950 dark:focus:border-transparent"
+              type="text"
+              value={targetLanguage}
+              onChange={(e) => setTargetLanguage(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSendMessage();
+                }
+              }}
+              placeholder="Target Language…"
+            />
+          </div>
           <button
-            className="absolute top-[1.8rem] right-7 text-text disabled:cursor-not-allowed hover:scale-105 transition-transform"
+            className="flex text-text disabled:cursor-not-allowed hover:scale-105 transition-transform p-4 border justify-center items-center rounded-md w-full bg-primary"
             onClick={handleSendMessage}
-            disabled={!prompt}
+            disabled={!prompt || !sourceLanguage || !targetLanguage}
           >
-            <ArrowUpSquare className="w-6 h-6 text-text" />
+            <ArrowUpSquare className="w-6 h-6 text-text" />{" "}
+            <p className="ml-2">Translate</p>
           </button>
         </div>
       </div>
