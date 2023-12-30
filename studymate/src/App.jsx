@@ -10,7 +10,11 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import Navbar from "./components/Navbar";
 import { Moon, Sun } from "lucide-react";
 import Hub from "./components/ai/Hub";
-import Timetable from "./components/uni/Timetable";
+import AIChat from "./components/ai/AIChat";
+import AIContentWriter from "./components/ai/AIContentWriter";
+import AISummariser from "./components/ai/AISummariser";
+import AIParaphraser from "./components/ai/AIParaphraser";
+import AITranslator from "./components/ai/AITranslator";
 
 export default function App() {
   let [darkMode, setDarkMode] = useState(false);
@@ -49,8 +53,17 @@ export default function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/whiteboard" element={<Draw />} />
             <Route exact path="/todo" element={<ToDo />} />
-            <Route exact path="/timetable" element={<Timetable />} />
+
             <Route path="/ai-hub" element={<Hub />} />
+            <Route path="/ai-hub/chat" element={<AIChat />} />
+            <Route
+              path="/ai-hub/content-writer"
+              element={<AIContentWriter />}
+            />
+            <Route path="/ai-hub/summariser" element={<AISummariser />} />
+            <Route path="/ai-hub/paraphraser" element={<AIParaphraser />} />
+            <Route path="/ai-hub/translator" element={<AITranslator />} />
+
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           </Routes>
         </div>

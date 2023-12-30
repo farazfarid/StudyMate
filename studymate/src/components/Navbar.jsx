@@ -29,11 +29,6 @@ const Navbar = () => {
       to: "/todo",
     },
     {
-      title: "TimeTable",
-      icon: <CalendarRange className="h-8 w-8" />,
-      to: "/timetable",
-    },
-    {
       title: "AI Hub",
       icon: <BrainCircuit className="h-8 w-8" />,
       to: "/ai-hub",

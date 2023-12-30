@@ -24,6 +24,12 @@
     --color-warn: 255 239 126;
     --color-error: 244 67 54;
   }
+
+  .text-outline-white {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    text-shadow: none;
+  }
 }
 
 * {
@@ -139,4 +145,56 @@ input::placeholder {
 input::-ms-input-placeholder {
   /* Edge 12 -18 */
   color: var(--color-text);
+}
+
+@layer components {
+  .primaryCard {
+    @apply backdrop-blur border border-white border-opacity-10 rounded-2xl bg-white/30 shadow-[0_0_20px_rgba(255,_255,_255,_0.7)] text-text p-4;
+  }
+
+  .heroHeadText {
+    @apply font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2;
+  }
+  .heroSubText {
+    @apply text-white font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px];
+  }
+
+  .sectionHeadText {
+    @apply text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px];
+  }
+
+  .sectionSubText {
+    @apply flex sm:text-[18px] text-[14px] text-text uppercase tracking-wider justify-center items-center;
+  }
+
+  .sectionHeadTextOutline {
+    @apply text-outline-white font-medium uppercase md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px];
+  }
+
+  .homeSubtitleTextOutline {
+    @apply text-outline-white font-medium uppercase md:text-[30px] sm:text-[50px] xs:text-[40px] text-[30px];
+  }
+}
+
+.nav-container {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(100px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
