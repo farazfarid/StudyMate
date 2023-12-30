@@ -2,7 +2,7 @@ import { ArrowUpSquare } from "lucide-react";
 import React, { useState } from "react";
 import Avatar from "react-avatar";
 
-import { sendMessage } from "../../util/openai";
+import { sendMessage } from "../../util/aichat";
 
 function AIChat() {
   const [prompt, setPrompt] = useState("");
