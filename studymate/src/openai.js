@@ -1,18 +1,20 @@
-const { Configuration, OpenAIApi } = require("openai");
+import { Configuration, OpenAIApi } from "openai";
 
-const API_KEY = process.env.VITE_APP_OPENAI_API_KEY;
+const API_KEY = import.meta.env.VITE_APP_OPENAI_API_KEY;
 
 const configuration = new Configuration({
   apiKey: API_KEY,
 });
 
+delete configuration.baseOptions.headers["User-Agent"];
+
 const openai = new OpenAIApi(configuration);
 
 export async function sendMessage(message) {
   const response = await openai.createCompletion({
-    model: "gpt-3.5-turbo",
+    model: "text-davinci-003",
     prompt: message,
-    temperature: 0.9,
+    temperature: 0.7,
     max_tokens: 256,
     top_p: 1,
     frequency_penalty: 0,
