@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Avatar from "react-avatar";
 
 import { sendMessage } from "../../util/aichat";
+import Markdown from "react-markdown";
 
 function AIChat() {
   const [prompt, setPrompt] = useState("");
@@ -41,7 +42,9 @@ function AIChat() {
                     messages.isUser ? "bg-primary" : "bg-secondary"
                   } text-white m-2 p-3 rounded-l-lg rounded-br-lg`}
                 >
-                  <p className="text-sm">{messages.text}</p>
+                  <p className="text-sm">
+                    <Markdown>{messages.text}</Markdown>
+                  </p>
                 </div>
               </div>
               <div className="flex-shrink-0 h-10 w-10 rounded-full">

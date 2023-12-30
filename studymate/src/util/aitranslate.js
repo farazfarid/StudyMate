@@ -18,7 +18,7 @@ export async function translateMessage(
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: `Translate from ${sourceLanguage} to ${targetLanguage}: ${message}. Only show the translation please!`,
-    temperature: 0.7,
+    temperature: 0.5,
     max_tokens: 256,
     top_p: 1,
     frequency_penalty: 0,

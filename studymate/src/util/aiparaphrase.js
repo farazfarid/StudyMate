@@ -15,7 +15,7 @@ export async function paraphraseText(message, style) {
     model: "text-davinci-003",
     prompt: `Paraphrase this text in ${style}: ${message}`,
     temperature: 0.3,
-    max_tokens: 256,
+    max_tokens: 1000,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,

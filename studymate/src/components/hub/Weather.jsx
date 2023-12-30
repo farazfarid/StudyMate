@@ -44,7 +44,6 @@ function Weather() {
       .then((res) => res.json())
       .then((data) => {
         setWeather(data);
-        console.log(data);
 
         if (data.weather[0].icon === "01d") {
           setWeatherIcon(clearDay);

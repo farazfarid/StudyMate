@@ -15,7 +15,7 @@ export async function summariseText(message) {
     model: "text-davinci-003",
     prompt: `Summarise this as detailled as posssible but also don't lose any important details such as links if possible: ${message}`,
     temperature: 0.3,
-    max_tokens: 256,
+    max_tokens: 512,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
