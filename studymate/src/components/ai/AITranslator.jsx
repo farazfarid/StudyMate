@@ -29,7 +29,7 @@ function AITranslator() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full p-10">
       <div>
-        <h1 className="heroHeadText">StudyMate Translator</h1>
+        <h1 className="heroHeadText">AI Translator</h1>
         <p className="heroSubText">
           Translate any text whether it be in ancient old or modern language!
         </p>
