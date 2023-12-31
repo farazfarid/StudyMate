@@ -27,7 +27,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="text-text flex flex-col items-center justify-center">
       <div className="flex py-4 px-2">
         <h2 className={`${styles.heroHeadText} text-center drop-shadow-glow`}>
           Welcome to StudyMate!

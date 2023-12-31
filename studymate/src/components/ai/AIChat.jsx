@@ -20,7 +20,7 @@ function AIChat() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full p-10">
+    <div className="text-text flex flex-col items-center justify-center w-full h-full p-10">
       <div>
         <h1 className="heroHeadText">Your StudyMate</h1>
         <p className="heroSubText">Chat with AI about anything!</p>

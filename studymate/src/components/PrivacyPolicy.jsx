@@ -1,6 +1,6 @@
 const PrivacyPolicy = () => {
   return (
-    <div className="text-[7px] md:text-[10px] max-w-2xl mx-auto mt-4 over">
+    <div className="text-text text-[7px] md:text-[10px] max-w-2xl mx-auto mt-4 over">
       <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
 
       <p className="mb-4">1. Introduction</p>

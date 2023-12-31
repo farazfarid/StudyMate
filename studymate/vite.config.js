@@ -7,4 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ["react-avatar"],
   },
+  define: {
+    "process.env.IS_PREACT": JSON.stringify("true"),
+  },
 });

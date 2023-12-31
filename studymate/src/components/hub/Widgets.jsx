@@ -44,7 +44,7 @@ const Widgets = ({
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+    <div className="text-text grid grid-cols-1 md:grid-cols-5 gap-4">
       {widgetData.map((widget) => (
         <div
           key={widget.id}
@@ -92,7 +92,7 @@ const Widgets = ({
             onClick={handleAddWidget}
             className="flex flex-col items-center"
           >
-            <PlusCircle className="h-9 w-9 px-1 text-gray-800" />
+            <PlusCircle className="h-9 w-9 px-1 text-text" />
             <p className="pt-2 text-sm">Add Widget</p>
           </button>
         </div>

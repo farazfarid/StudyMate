@@ -39,7 +39,7 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 
-  @apply text-text transition-colors duration-700 ease-in-out;
+  @apply transition-colors duration-700 ease-in-out;
 }
 
 /* width */

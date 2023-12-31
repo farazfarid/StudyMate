@@ -14,7 +14,7 @@ const Modal = ({ widget, onSave, onClose, onDelete }) => {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/85">
+    <div className="text-text fixed inset-0 flex items-center justify-center bg-black/85">
       <div className="flex flex-col bg-black w-4/5 h-2/5 lg:w-1/2 p-4 rounded-3xl shadow-md backdrop-blur-3xl items-center">
         <div className="flex items-center ml-auto">
           <button

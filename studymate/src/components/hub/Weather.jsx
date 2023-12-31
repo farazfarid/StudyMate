@@ -88,7 +88,7 @@ function Weather() {
   };
 
   return (
-    <div className="flex flex-col p-12 justify-center items-center">
+    <div className="text-text flex flex-col p-12 justify-center items-center">
       <div className="pb-12 relative">
         <input
           className="w-full bg-transparent text-text border-gray-300 border-2 rounded-md p-3 pr-12 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-950 dark:focus:border-transparent"

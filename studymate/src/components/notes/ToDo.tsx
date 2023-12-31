@@ -21,7 +21,7 @@ const Item = ({ text, index, onDelete }) => (
   <Draggable draggableId={text} index={index}>
     {(provided) => (
       <div
-        className="bg-black/20 rounded p-2 transition duration-300 ease-out mt-2 hover:bg-white/20 hover:transition hover:duration-100 hover:ease-in flex items-center justify-between"
+        className="text-text bg-black/20 rounded p-2 transition duration-300 ease-out mt-2 hover:bg-white/20 hover:transition hover:duration-100 hover:ease-in flex items-center justify-between"
         ref={provided.innerRef}
         {...provided.draggableProps}
         {...provided.dragHandleProps}
@@ -38,7 +38,7 @@ const Item = ({ text, index, onDelete }) => (
 const Column = ({ col: { list, id }, onDeleteItem }) => (
   <Droppable droppableId={id}>
     {(provided) => (
-      <div className="p-6 flex flex-col mt-2">
+      <div className="text-text p-6 flex flex-col mt-2">
         <h2 className="m-0">{id}</h2>
         <div
           className="bg-black/20 rounded-lg p-4 flex flex-col flex-grow mt-1"
@@ -99,7 +99,7 @@ const AddTodoInput = ({ value, onChange, onAdd }) => {
   }, [currentIndex, todoOptions]);
 
   return (
-    <div className="p-6 flex flex-col relative">
+    <div className="text-text p-6 flex flex-col relative">
       <div className="relative">
         <input
           type="text"

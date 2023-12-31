@@ -17,20 +17,20 @@ const Navbar = () => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
 
   const navItems = [
-    { title: "Home", icon: <Home className="h-8 w-8" />, to: "/" },
+    { title: "Home", icon: <Home className="text-text h-8 w-8" />, to: "/" },
     {
       title: "Whiteboard",
-      icon: <PenTool className="h-8 w-8" />,
+      icon: <PenTool className="text-text h-8 w-8" />,
       to: "/whiteboard",
     },
     {
       title: "ToDo-List",
-      icon: <ListTodo className="h-8 w-8" />,
+      icon: <ListTodo className="text-text h-8 w-8" />,
       to: "/todo",
     },
     {
       title: "AI Hub",
-      icon: <BrainCircuit className="h-8 w-8" />,
+      icon: <BrainCircuit className="text-text h-8 w-8" />,
       to: "/ai-hub",
     },
     {
@@ -45,7 +45,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed left-0 top-3 h-full max-w-xs">
+    <div className="text-text fixed left-0 top-3 h-full max-w-xs">
       <div
         className="cursor-pointer p-2 self-start"
         onClick={() => setNavbarOpen(!isNavbarOpen)}

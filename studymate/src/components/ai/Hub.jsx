@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function Hub() {
   return (
-    <div className="p-10">
+    <div className="text-text p-10">
       <div className="mb-10">
         <h1 class="heroHeadText">AI Hub</h1>
         <h3 className="sectionHeadTextOutline">Welcome to the AI Hub!</h3>

@@ -25,7 +25,7 @@ const Clock = () => {
   }, []);
 
   return (
-    <div className="flex py-2">
+    <div className="text-text flex py-2">
       <div className="text-9xl text-text">{currentTime}</div>
     </div>
   );

@@ -14,7 +14,7 @@ function AIParaphraser() {
   };
 
   return (
-    <div className="flex justify-center items-center h-full">
+    <div className="text-text flex justify-center items-center h-full">
       <div className="flex flex-col items-center justify-center w-[50rem] h-full p-10">
         <div>
           <h1 className="heroHeadText">AI Paraphraser</h1>
