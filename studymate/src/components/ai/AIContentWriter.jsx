@@ -11,7 +11,6 @@ function AIContentWriter() {
 
   const handleSendMessage = async () => {
     const response = await generateContent(prompt, style);
-    console.log(response);
     setMessages([...messages, { text: response, isUser: false }]);
   };
 

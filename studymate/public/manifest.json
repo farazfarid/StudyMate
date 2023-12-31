@@ -1,19 +1,16 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Studymate",
-  "$schema": "https://json.schemastore.org/chrome-manifest.json",
-  "version": "0.1.0",
-  "description": "My Chrome Extension",
+  "version": "1.0.0",
+  "description": "StudyMate by Fabian Faraz Farid | farazfarid.me",
   "icons": {
     "16": "icons/icon_16.png",
     "32": "icons/icon_32.png",
     "48": "icons/icon_48.png",
     "128": "icons/icon_128.png"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
   "chrome_url_overrides": {
     "newtab": "index.html"
-  }
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://unpkg.com 'sha256-bG/W2v4cHdny0s5YjAw+uBm/H23BYs1yi88QTUEaamQ='; object-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://unpkg.com 'sha256-bG/W2v4cHdny0s5YjAw+uBm/H23BYs1yi88QTUEaamQ='"
 }
