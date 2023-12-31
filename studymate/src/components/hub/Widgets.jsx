@@ -80,7 +80,7 @@ const Widgets = ({
             className="flex flex-col items-center"
           >
             <PlusCircle className="h-9 w-9 px-1 text-text" />
-            <p className="pt-2 text-sm">Add Widget</p>
+            <p className="pt-2 text-sm">Add Shortcut</p>
           </button>
         </div>
       )}
