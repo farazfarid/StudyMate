@@ -1,17 +1,16 @@
-import { Configuration, OpenAIApi } from "openai";
+import OpenAI from "openai";
 
 const API_KEY = import.meta.env.VITE_APP_OPENAI_API_KEY;
 
-const configuration = new Configuration({
-  apiKey: API_KEY,
-});
 
 delete configuration.baseOptions.headers["User-Agent"];
 
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI({
+  apiKey: API_KEY,
+});
 
 export async function sendMessage(message) {
-  const response = await openai.createCompletion({
+  const response = await openai.completions.create({
     model: "text-davinci-003",
     prompt: `Reply in Markdown please: ${message}`,
     temperature: 0.5,
@@ -21,5 +20,5 @@ export async function sendMessage(message) {
     presence_penalty: 0,
   });
 
-  return response.data.choices[0].text;
+  return response.choices[0].text;
 }
