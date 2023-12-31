@@ -12,5 +12,5 @@
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
-  "content_security_policy": "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://unpkg.com 'sha256-bG/W2v4cHdny0s5YjAw+uBm/H23BYs1yi88QTUEaamQ='; object-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://unpkg.com 'sha256-bG/W2v4cHdny0s5YjAw+uBm/H23BYs1yi88QTUEaamQ='"
+  "content_security_policy": "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://unpkg.com https://maps.googleapis.com 'sha256-bG/W2v4cHdny0s5YjAw+uBm/H23BYs1yi88QTUEaamQ='; object-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://unpkg.com https://maps.googleapis.com 'sha256-bG/W2v4cHdny0s5YjAw+uBm/H23BYs1yi88QTUEaamQ='"
 }
