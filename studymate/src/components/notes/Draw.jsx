@@ -5,7 +5,7 @@ export default function Draw() {
     <div className="flex items-center justify-center flex-col p-12">
       <h1 className="heroHeadText">Excalidraw</h1>
       <div
-        style={{ width: "75vw", height: "75vh" }}
+        style={{ width: "75vw", height: "70vh" }}
         className="overflow-hidden"
       >
         <Excalidraw
@@ -14,11 +14,7 @@ export default function Draw() {
               toggleTheme: true,
             },
           }}
-          theme={
-            document.documentElement.classList.contains("dark")
-              ? "light"
-              : "dark"
-          }
+          theme="light"
         />
       </div>
     </div>
