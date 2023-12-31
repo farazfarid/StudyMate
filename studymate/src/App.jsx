@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <div
-      className={`w-screen h-screen flex items-center justify-center flex-col bg-white-100 bg-opacity-80 dark:bg-neutral-900 bg-hero-light dark:bg-hero-dark bg-cover bg-center transition ease-in-out duration-300`}
+      className={`w-screen h-screen flex items-center justify-center flex-col bg-white-100 bg-opacity-80 dark:bg-neutral-900 bg-hero-light dark:bg-hero-dark bg-cover bg-center transition ease-in-out duration-300 overflow-hidden`}
     >
       <Router>
         <div className="absolute left-6 top-8 z-50">
