@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { BrainCircuit, Home, ListTodo, Menu, PenTool } from "lucide-react";
+import {
+  BrainCircuit,
+  Home,
+  ListTodo,
+  Menu,
+  PenTool,
+  TrainFrontTunnel,
+} from "lucide-react";
 
 const Navbar = () => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
@@ -8,9 +15,9 @@ const Navbar = () => {
   const navItems = [
     { title: "Home", icon: <Home className="text-text h-8 w-8" />, to: "/" },
     {
-      title: "Whiteboard",
-      icon: <PenTool className="text-text h-8 w-8" />,
-      to: "/whiteboard",
+      title: "Directions",
+      icon: <TrainFrontTunnel className="text-text h-8 w-8" />,
+      to: "/directions",
     },
     {
       title: "ToDo-List",
@@ -18,14 +25,14 @@ const Navbar = () => {
       to: "/todo",
     },
     {
+      title: "Whiteboard",
+      icon: <PenTool className="text-text h-8 w-8" />,
+      to: "/whiteboard",
+    },
+    {
       title: "AI Hub",
       icon: <BrainCircuit className="text-text h-8 w-8" />,
       to: "/ai-hub",
-    },
-    {
-      /* DB Zugverbindungen - Aktuelle Zeit zur Uni
-        https://developers.deutschebahn.com/db-api-marketplace/apis/product/timetables
-      */
     },
   ];
 

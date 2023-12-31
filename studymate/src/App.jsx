@@ -15,6 +15,7 @@ import AIContentWriter from "./components/ai/AIContentWriter";
 import AISummariser from "./components/ai/AISummariser";
 import AIParaphraser from "./components/ai/AIParaphraser";
 import AITranslator from "./components/ai/AITranslator";
+import Directions from "./components/maps/Directions";
 
 export default function App() {
   let [darkMode, setDarkMode] = useState(false);
@@ -63,6 +64,8 @@ export default function App() {
             <Route path="/ai-hub/summariser" element={<AISummariser />} />
             <Route path="/ai-hub/paraphraser" element={<AIParaphraser />} />
             <Route path="/ai-hub/translator" element={<AITranslator />} />
+
+            <Route path="/directions" element={<Directions />} />
 
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           </Routes>

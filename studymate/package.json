@@ -13,6 +13,7 @@
     "@excalidraw/excalidraw": "^0.17.2",
     "@hello-pangea/dnd": "^16.5.0",
     "@tldraw/tldraw": "2.0.0-alpha.19",
+    "@vis.gl/react-google-maps": "^0.4.2",
     "lucide-react": "^0.294.0",
     "openai": "^4.0.0",
     "prop-types": "^15.8.1",
