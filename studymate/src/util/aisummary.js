@@ -1,17 +1,16 @@
-import { Configuration, OpenAIApi } from "openai";
+import OpenAI from "openai";
 
 const API_KEY = import.meta.env.VITE_APP_OPENAI_API_KEY;
 
-const configuration = new Configuration({
-  apiKey: API_KEY,
-});
 
 delete configuration.baseOptions.headers["User-Agent"];
 
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI({
+  apiKey: API_KEY,
+});
 
 export async function summariseText(message) {
-  const response = await openai.createCompletion({
+  const response = await openai.completions.create({
     model: "text-davinci-003",
     prompt: `Summarise this as detailled as posssible but also don't lose any important details such as links if possible: ${message}`,
     temperature: 0.3,
@@ -21,5 +20,5 @@ export async function summariseText(message) {
     presence_penalty: 0,
   });
 
-  return response.data.choices[0].text;
+  return response.choices[0].text;
 }
