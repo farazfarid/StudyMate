@@ -5,6 +5,12 @@ const Modal = ({ widget, onSave, onClose, onDelete }) => {
   const [editedWidget, setEditedWidget] = useState(widget);
 
   const handleSave = () => {
+    if (!editedWidget.title || !editedWidget.link) return;
+
+    if (!editedWidget.link.startsWith("https://")) {
+      editedWidget.link = `https://${editedWidget.link}`;
+    }
+
     onSave(editedWidget);
     onClose();
   };
@@ -25,7 +31,15 @@ const Modal = ({ widget, onSave, onClose, onDelete }) => {
           </button>
         </div>
         <div className="flex items-center justify-center mb-4">
-          <Blocks className="h-24 w-24 text-text" />
+          {!editedWidget.link ? (
+            <Blocks className="h-12 w-12 text-text" />
+          ) : (
+            <img
+              src={`https://www.google.com/s2/favicons?sz=48&domain=${editedWidget.link}`}
+              alt="Favicon"
+              className="object-contain w-full h-full"
+            />
+          )}
         </div>
         <input
           type="text"

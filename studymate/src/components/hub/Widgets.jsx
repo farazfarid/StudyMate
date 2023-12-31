@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Pencil, PlusCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Widgets = ({
   widgetData,
@@ -12,19 +13,6 @@ const Widgets = ({
   useEffect(() => {
     localStorage.setItem("widgetData", JSON.stringify(widgetData));
   }, [widgetData]);
-
-  const handleSaveChanges = (updatedWidget) => {
-    setWidgetData((prevData) =>
-      prevData.map((widget) =>
-        widget.id === updatedWidget.id ? updatedWidget : widget
-      )
-    );
-    setEditingWidget(null);
-  };
-
-  const handleDeleteWidget = (id) => {
-    setWidgetData((prevData) => prevData.filter((widget) => widget.id !== id));
-  };
 
   const handleToggleDetails = (id) => {
     setEditingWidget((prev) => (prev === id ? null : id));
@@ -51,8 +39,8 @@ const Widgets = ({
           className="mb-4 relative overflow-hidden bg-white dark:bg-black/40 bg-opacity-40 backdrop-blur-md p-4 rounded-md shadow-md hover:scale-110 transition ease-in-out duration-300"
         >
           <div className="flex flex-col items-center justify-center">
-            <a
-              href={widget.link}
+            <Link
+              to={widget.link}
               target="_blank"
               rel="noopener noreferrer"
               className="mb-6 mx-4 w-8 h-8"
@@ -67,9 +55,9 @@ const Widgets = ({
                   <p className="pt-2 text-sm">{widget.title}</p>
                 </div>
               ) : (
-                <div className="w-full h-full bg-gray-300"></div>
+                <div className="w-full h-full bg-primary rounded-full"></div>
               )}
-            </a>
+            </Link>
             {!editingWidget && (
               <div
                 className="absolute top-1 right-1 cursor-pointer hover:bg-black/20 rounded-full"

@@ -1,17 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  BrainCircuit,
-  CalendarRange,
-  GraduationCap,
-  Home,
-  ListTodo,
-  Mail,
-  Menu,
-  MessagesSquare,
-  PenTool,
-  StickyNote,
-} from "lucide-react";
+import { BrainCircuit, Home, ListTodo, Menu, PenTool } from "lucide-react";
 
 const Navbar = () => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
