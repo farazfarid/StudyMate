@@ -11,6 +11,7 @@ function AIContentWriter() {
 
   const handleSendMessage = async () => {
     const response = await generateContent(prompt, style);
+    console.log(response);
     setMessages([...messages, { text: response, isUser: false }]);
   };
 
@@ -31,11 +32,9 @@ function AIContentWriter() {
               <div key={index} className={`flex w-full flex-row-reverse`}>
                 <div>
                   <div
-                    className={`bg-secondary text-white p-3 rounded-l-lg rounded-br-lg mb-2`}
+                    className={`bg-secondary text-white p-3 rounded-l-lg rounded-br-lg mb-2 text-sm`}
                   >
-                    <p className="text-sm">
-                      <Markdown>{messages.text}</Markdown>
-                    </p>
+                    <Markdown>{messages.text}</Markdown>
                   </div>
                 </div>
               </div>

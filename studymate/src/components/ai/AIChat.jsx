@@ -40,11 +40,9 @@ function AIChat() {
                 <div
                   className={`${
                     messages.isUser ? "bg-primary" : "bg-secondary"
-                  } text-white m-2 p-3 rounded-l-lg rounded-br-lg`}
+                  } text-white m-2 p-3 rounded-l-lg rounded-br-lg text-sm`}
                 >
-                  <p className="text-sm">
-                    <Markdown>{messages.text}</Markdown>
-                  </p>
+                  <Markdown>{messages.text}</Markdown>
                 </div>
               </div>
               <div className="flex-shrink-0 h-10 w-10 rounded-full">

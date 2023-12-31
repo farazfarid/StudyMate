@@ -2,17 +2,17 @@ import OpenAI from "openai";
 
 const API_KEY = import.meta.env.VITE_APP_OPENAI_API_KEY;
 
-
-delete configuration.baseOptions.headers["User-Agent"];
-
 const openai = new OpenAI({
   apiKey: API_KEY,
+  dangerouslyAllowBrowser: true,
 });
 
 export async function sendMessage(message) {
-  const response = await openai.completions.create({
-    model: "text-davinci-003",
-    prompt: `Reply in Markdown please: ${message}`,
+  const response = await openai.chat.completions.create({
+    model: "gpt-3.5-turbo",
+    messages: [
+      { role: "user", content: `Reply in Markdown please: ${message}` },
+    ],
     temperature: 0.5,
     max_tokens: 256,
     top_p: 1,
@@ -20,5 +20,5 @@ export async function sendMessage(message) {
     presence_penalty: 0,
   });
 
-  return response.choices[0].text;
+  return response.choices[0].message.content;
 }

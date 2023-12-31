@@ -47,7 +47,7 @@ function AISummariser() {
             <button
               className="flex text-text disabled:cursor-not-allowed hover:scale-105 transition-transform p-4 border justify-center items-center rounded-md w-full bg-primary"
               onClick={handleSendMessage}
-              disabled={!prompt || !style}
+              disabled={!prompt}
             >
               <ArrowUpSquare className="w-6 h-6 text-text" />{" "}
               <p className="ml-2">Summarise</p>

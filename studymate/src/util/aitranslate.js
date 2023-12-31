@@ -2,11 +2,9 @@ import OpenAI from "openai";
 
 const API_KEY = import.meta.env.VITE_APP_OPENAI_API_KEY;
 
-
-delete configuration.baseOptions.headers["User-Agent"];
-
 const openai = new OpenAI({
   apiKey: API_KEY,
+  dangerouslyAllowBrowser: true,
 });
 
 export async function translateMessage(
@@ -14,9 +12,14 @@ export async function translateMessage(
   sourceLanguage,
   targetLanguage
 ) {
-  const response = await openai.completions.create({
-    model: "text-davinci-003",
-    prompt: `Translate from ${sourceLanguage} to ${targetLanguage}: ${message}. Only show the translation please!`,
+  const response = await openai.chat.completions.create({
+    model: "gpt-3.5-turbo",
+    messages: [
+      {
+        role: "user",
+        content: `Translate from ${sourceLanguage} to ${targetLanguage}: ${message}. Only show the translation please!`,
+      },
+    ],
     temperature: 0.5,
     max_tokens: 256,
     top_p: 1,
@@ -24,5 +27,5 @@ export async function translateMessage(
     presence_penalty: 0,
   });
 
-  return response.choices[0].text;
+  return response.choices[0].message.content;
 }
