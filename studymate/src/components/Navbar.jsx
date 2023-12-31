@@ -66,6 +66,21 @@ const Navbar = () => {
               </div>
             </Link>
           ))}
+          <div className="absolute right-[1.75rem] bottom-28">
+            <Link
+              to="https://www.farazfarid.me"
+              className="flex items-center justify-center my-2 cursor-pointer transition-opacity duration-300 transform hover:scale-110 hover:drop-shadow-glowWhite"
+              onClick={handleMenuItemClick}
+            >
+              <div className="mr-2">
+                <img
+                  src="/logo.png"
+                  alt="Fabian Faraz Farid | farazfarid.me"
+                  className="logo flex justify-center items-center text-text h-24 w-24"
+                />
+              </div>
+            </Link>
+          </div>
         </div>
       )}
     </div>

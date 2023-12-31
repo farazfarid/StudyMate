@@ -229,3 +229,17 @@ textarea::-ms-input-placeholder {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(720deg); /* Two full spins (360deg * 2) */
+  }
+}
+
+.logo:hover {
+  animation: spin 2s ease-in-out; /* Two seconds for two spins */
+  transform: scale(1.2) ease-in-out; /* Scale up by 20% */
+}

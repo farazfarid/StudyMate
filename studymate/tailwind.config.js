@@ -31,6 +31,10 @@ module.exports = {
           "0 0px 20px rgba(54, 81, 94, 0.8)",
           "0 0px 65px rgba(54, 81, 94, 0.58)",
         ],
+        glowWhite: [
+          "0 0px 20px rgba(255, 255, 255, 0.8)",
+          "0 0px 65px rgba(255, 255, 255, 0.58)",
+        ],
       },
       screens: {
         xs: "450px",

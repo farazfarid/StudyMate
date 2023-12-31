@@ -41,7 +41,6 @@ const Widgets = ({
           <div className="flex flex-col items-center justify-center">
             <Link
               to={widget.link}
-              target="_blank"
               rel="noopener noreferrer"
               className="mb-6 mx-4 w-8 h-8"
             >
