@@ -7,7 +7,6 @@ import {
 } from "@hello-pangea/dnd";
 import { PlusIcon, Trash2 } from "lucide-react";
 
-// Helper functions for Local Storage
 const setLocalStorage = (key, value) => {
   localStorage.setItem(key, JSON.stringify(value));
 };
@@ -80,20 +79,20 @@ const AddTodoInput = ({ value, onChange, onAdd }) => {
         const isTypingComplete = prevText === currentOption;
 
         if (isTypingComplete) {
-          clearInterval(intervalId); // Clear the interval to stop typing
+          clearInterval(intervalId);
           setTimeout(() => {
             setCurrentIndex((prevIndex) =>
               prevIndex === todoOptions.length - 1 ? 0 : prevIndex + 1
             );
-            setAnimatedText(""); // Reset animated text for the next typing
-          }, 2000); // 2-second delay after typing completion
+            setAnimatedText("");
+          }, 2000);
         }
 
         return isTypingComplete
           ? prevText
           : currentOption.substring(0, prevText.length + 1);
       });
-    }, 100); // Adjust the interval duration for the typing speed
+    }, 100);
 
     return () => clearInterval(intervalId);
   }, [currentIndex, todoOptions]);
@@ -105,7 +104,7 @@ const AddTodoInput = ({ value, onChange, onAdd }) => {
           type="text"
           value={value}
           onChange={onChange}
-          className="bg-black/20 rounded p-2 w-full" // Add left and right padding for the icon
+          className="bg-black/20 rounded p-2 w-full"
           placeholder={animatedText}
         />
         <button
@@ -113,7 +112,6 @@ const AddTodoInput = ({ value, onChange, onAdd }) => {
           onClick={onAdd}
         >
           <PlusIcon size={20} color="#55D86B" />
-          {/* Use the Plus icon here */}
         </button>
       </div>
     </div>
